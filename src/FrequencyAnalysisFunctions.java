@@ -4,6 +4,40 @@ import java.util.Iterator;
 import java.util.Objects;
 
 public class FrequencyAnalysisFunctions {
+    static void ShowMenu(){
+        InOut.print("Определить символы, которые:\n" +
+                "1 входят и в первую и во вторую строку\n2 входят в первую и не входят во вторую\n" +
+                "3 содержатся хотя бы в одной строке");
+        String rezult=null;
+        switch(InOut.GetIntFromUser("Введите номер варианта", 4,1)) {
+            case 1: {
+                rezult = FrequencyAnalysisFunctions.FindDuplicateWordAndSymbols
+                        (InOut.getLineFromUser("Введите первую строку"),
+                                InOut.getLineFromUser("Введите вторую строку"));
+                break;
+            }
+            case 2: {
+                rezult = FrequencyAnalysisFunctions.FindWordAndSymbolsOnlyInString1
+                        (InOut.getLineFromUser("Введите первую строку"),
+                                InOut.getLineFromUser("Введите вторую строку"));
+                break;
+            }
+            case 3: {
+                rezult = FrequencyAnalysisFunctions.FindWordAndSymbolsInAtLeast1Line
+                        (InOut.getLineFromUser("Введите первую строку"),
+                                InOut.getLineFromUser("Введите вторую строку"));
+                break;
+            }
+        }
+        if(rezult!=null) {
+            System.out.println(rezult);
+            FrequencyAnalysisFunctions.WriteTextToFile(rezult,InOut.getLineFromUser
+                    ("Введите названия файла в который сохранить(без расширения)" +
+                            "(Файл будет перезаписан!!!)"));
+        }
+        else InOut.print("Error");
+    }
+
     static void WriteTextToFile(String StringToWrite, String FileName){
         try {
             if(StringToWrite !=null){
