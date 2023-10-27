@@ -80,7 +80,7 @@ public class FrequencyAnalysisFunctions {
                     rezultSymbols = rezultSymbols + value + " ";
         }
         if((rezultSymbols + rezultWords).isEmpty())return null;
-        else return rezultWords+rezultSymbols;
+        else return "Слова: "+rezultWords+"\nБуквы: "+rezultSymbols;
     }
     static String FindWordAndSymbolsOnlyInString1(String _string1,String _string2){//метод для поиска  слов
         // которые встречаются только в первой строке
@@ -106,7 +106,7 @@ public class FrequencyAnalysisFunctions {
                     rezultSymbols = rezultSymbols + value + " ";
         }
         if((rezultSymbols + rezultWords).isEmpty())return null;
-        else return rezultWords+rezultSymbols;
+        else return "Слова: "+rezultWords+"\nБуквы: "+rezultSymbols;
     }
     static String FindWordAndSymbolsInAtLeast1Line(String _string1,String _string2){//метод для поиска  слов
         // которые встречаются только в одной строке
@@ -166,6 +166,7 @@ public class FrequencyAnalysisFunctions {
                     rezultSymbols = rezultSymbols + value + " ";
         }
         if((rezultSymbols + rezultWords).isEmpty())return null;
-        else return (rezultWords+rezultSymbols).replaceAll("[\\s]{2,}", " ");
+        else return (("Слова: "+rezultWords).replaceAll("[\\s]{2,}", " ")+"\nБуквы: "
+                +rezultSymbols.replaceAll("[\\s]{2,}", " "));
     }
 }
