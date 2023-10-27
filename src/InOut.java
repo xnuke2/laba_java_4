@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class InOut {
-    static Scanner in = new Scanner(System.in);
+    static Scanner in = new Scanner(System.in);//объект класса Scanner
 
-    static int GetIntFromUser(String WhatToNeed, int max, int min){//функция для получения значения int от пользователя
+    static int GetIntFromUser(String WhatToNeed, int max, int min){//метод для получения значения int от пользователя
         if (max<min)return 0;
         System.out.println(WhatToNeed);
         int num=0;
@@ -21,13 +21,13 @@ public class InOut {
         }
         return num;
     }
-    static int GetIntFromUser(String WhatToNeed, int min){//функция для получения значения int от пользователя
+    static int GetIntFromUser(String WhatToNeed, int min){//перегрузка метода для получения значения int от пользователя
         return GetIntFromUser(WhatToNeed,2147483647,min);
     }
-    static int GetIntFromUser(String WhatToNeed){//функция для получения значения int от пользователя
+    static int GetIntFromUser(String WhatToNeed){//перегрузка метода для получения значения int от пользователя
         return GetIntFromUser(WhatToNeed,2147483647,-2147483647);
     }
-    static String getLineFromUser(String WhatToNeed){//функция для получения значения string от пользователя
+    static String getLineFromUser(String WhatToNeed){//метод для получения значения string от пользователя
         System.out.println(WhatToNeed);
         String name="";
         while(name.isEmpty()){
@@ -40,7 +40,7 @@ public class InOut {
         }
         return name;
     }
-    static void print(String _string){
+    static void print(String _string){//метод для вывода строки
         if(_string!=null) System.out.println(_string);
     }
 }

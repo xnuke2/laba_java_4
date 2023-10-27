@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Objects;
 
 public class FrequencyAnalysisFunctions {
-    static void ShowMenu(){
+    static void ShowMenu(){//метод для вывода пользовательского интерфэйса
         InOut.print("Определить символы, которые:\n" +
                 "1 входят и в первую и во вторую строку\n2 входят в первую и не входят во вторую\n" +
                 "3 содержатся хотя бы в одной строке");
@@ -38,7 +38,7 @@ public class FrequencyAnalysisFunctions {
         else InOut.print("Error");
     }
 
-    static void WriteTextToFile(String StringToWrite, String FileName){
+    static void WriteTextToFile(String StringToWrite, String FileName){//метод для записи строки в файл
         try {
             if(StringToWrite !=null){
                 FileWriter writer = new FileWriter(FileName+".txt");
@@ -49,7 +49,8 @@ public class FrequencyAnalysisFunctions {
             ex.printStackTrace();
         }
     }
-    static String FindDuplicateWordAndSymbols(String _string1,String _string2){
+    static String FindDuplicateWordAndSymbols(String _string1,String _string2){//метод для поиска одинаковых слов и
+        // символов в 2 строках
         if(_string1==null| Objects.equals(_string1, "") |_string2==null| Objects.equals(_string2, ""))return null;
         StringСollection WordsOfString1 = new StringСollection(_string1.replaceAll("\\pP", " ")
                 .replaceAll("[\\s]{2,}", " ").split(" "));
@@ -81,7 +82,8 @@ public class FrequencyAnalysisFunctions {
         if((rezultSymbols + rezultWords).isEmpty())return null;
         else return rezultWords+rezultSymbols;
     }
-    static String FindWordAndSymbolsOnlyInString1(String _string1,String _string2){
+    static String FindWordAndSymbolsOnlyInString1(String _string1,String _string2){//метод для поиска  слов
+        // которые встречаются только в первой строке
         if(_string1==null|_string1==""|_string2==null|_string2=="")return null;
         StringСollection WordsOfString1 = new StringСollection(_string1.replaceAll("\\pP", " ")
                 .replaceAll("[\\s]{2,}", " ").split(" "));
@@ -106,7 +108,8 @@ public class FrequencyAnalysisFunctions {
         if((rezultSymbols + rezultWords).isEmpty())return null;
         else return rezultWords+rezultSymbols;
     }
-    static String FindWordAndSymbolsInAtLeast1Line(String _string1,String _string2){
+    static String FindWordAndSymbolsInAtLeast1Line(String _string1,String _string2){//метод для поиска  слов
+        // которые встречаются только в одной строке
         StringСollection WordsOfString1 = new StringСollection(_string1.replaceAll("\\pP", " ")
                 .replaceAll("[\\s]{2,}", " ").split(" "));
         Iterator<String> IteratorOfString1 = WordsOfString1.iterator();
