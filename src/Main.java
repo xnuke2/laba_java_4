@@ -1,9 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println(StringСollection.FindDuplicateWordAndSymbols("i like bananas, very; math salo solt","bananas;, bear"));
-        System.out.println(StringСollection.FindWordAndSymbolsOnlyInString1("i like bananas, very; math salo solt","bananas;, bear"));
-        System.out.println(StringСollection.FindWordAndSymbolsInAtLeast1Line("i like bananas, very; math salo solt","bananas;, bearw"));
-
+        String tmp = "i like bananas бананы, very; math salo solt юанан";
+        String tmp1 ="banan;, bananas bear юанан бан banan";
+        System.out.println(FrequencyAnalysisFunctions.FindDuplicateWordAndSymbols(tmp,tmp1));
+        System.out.println(FrequencyAnalysisFunctions.FindWordAndSymbolsOnlyInString1(tmp,tmp1));
+        System.out.println(FrequencyAnalysisFunctions.FindWordAndSymbolsInAtLeast1Line(tmp,tmp1));
+        //FrequencyAnalysisFunctions.WriteTextToFile(FrequencyAnalysisFunctions.FindWordAndSymbolsInAtLeast1Line(tmp,tmp1),"ProgramRezult");
     }
 }
